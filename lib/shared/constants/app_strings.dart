@@ -36,7 +36,8 @@ class Strngs {
   static const save = 'Save';
   static const username = 'Username';
   static const bonus = 'Bonus';
-
+  static const noPhotoPic =
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwMtEVoV1bCSZDno7eKQQw7xaodzngOTNNIQ&usqp=CAU';
   // Branches Screen Strings
   static const location = 'Baku, Azerbaijan';
 
@@ -55,7 +56,8 @@ class Strngs {
   static const linkedin = 'LinkedIn';
   static const instagram = 'Instagram';
   static const instagramUrl = 'https://www.instagram.com/agelastrxn/';
-  static const linkedinUrl = 'https://www.linkedin.com/in/orkhan-mirzazada-378b60205/';
+  static const linkedinUrl =
+      'https://www.linkedin.com/in/orkhan-mirzazada-378b60205/';
 
   // Image Path Strings
   static const appLogoPath = 'assets/kolorit_splash_screen.png';

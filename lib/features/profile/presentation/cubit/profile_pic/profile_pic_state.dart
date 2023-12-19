@@ -12,7 +12,7 @@ class ProfilePicInitial extends ProfilePicState {}
 class ProfilePicSuccess extends ProfilePicState {
   final String url;
 
-  const ProfilePicSuccess(this.url);
+  const ProfilePicSuccess({this.url = Strngs.noPhotoPic});
 
   @override
   List<Object> get props => [url];
