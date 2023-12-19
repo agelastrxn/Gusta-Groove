@@ -50,19 +50,19 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBIDDmk6OyH8SBfhK213cE1Biz_oTWOEh4',
-    appId: '1:1051957411025:android:42f5e40fb1cdab41b619f0',
-    messagingSenderId: '1051957411025',
-    projectId: 'restaurant-67446',
-    storageBucket: 'restaurant-67446.appspot.com',
+    apiKey: 'AIzaSyAIZJ2tAa-qFXJ26-KfcaKBI1KzM47GJ34',
+    appId: '1:212960955877:android:311f74e6bbeb432e39f30c',
+    messagingSenderId: '212960955877',
+    projectId: 'gusta-groove',
+    storageBucket: 'gusta-groove.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAQ0BWd9vGcjWNbHxEkhgp1yMn5j7NGY8o',
-    appId: '1:1051957411025:ios:2037facd7a18852fb619f0',
-    messagingSenderId: '1051957411025',
-    projectId: 'restaurant-67446',
-    storageBucket: 'restaurant-67446.appspot.com',
+    apiKey: 'AIzaSyAq9OQmB4KsGEjSUu8obHjP_LC7cqIuznI',
+    appId: '1:212960955877:ios:c5e89e3b5f4341e939f30c',
+    messagingSenderId: '212960955877',
+    projectId: 'gusta-groove',
+    storageBucket: 'gusta-groove.appspot.com',
     iosBundleId: 'com.example.cubitLearningTest',
   );
 }

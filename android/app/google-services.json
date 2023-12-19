@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "1051957411025",
-    "project_id": "restaurant-67446",
-    "storage_bucket": "restaurant-67446.appspot.com"
+    "project_number": "212960955877",
+    "project_id": "gusta-groove",
+    "storage_bucket": "gusta-groove.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1051957411025:android:42f5e40fb1cdab41b619f0",
+        "mobilesdk_app_id": "1:212960955877:android:311f74e6bbeb432e39f30c",
         "android_client_info": {
           "package_name": "com.orkhan.restaurant"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBIDDmk6OyH8SBfhK213cE1Biz_oTWOEh4"
+          "current_key": "AIzaSyAIZJ2tAa-qFXJ26-KfcaKBI1KzM47GJ34"
         }
       ],
       "services": {
