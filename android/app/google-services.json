@@ -7,6 +7,25 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:212960955877:android:64aa247e1aba8d2539f30c",
+        "android_client_info": {
+          "package_name": "com.example.restaurant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIZJ2tAa-qFXJ26-KfcaKBI1KzM47GJ34"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:212960955877:android:311f74e6bbeb432e39f30c",
         "android_client_info": {
           "package_name": "com.orkhan.restaurant"

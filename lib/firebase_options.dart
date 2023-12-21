@@ -59,10 +59,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAq9OQmB4KsGEjSUu8obHjP_LC7cqIuznI',
-    appId: '1:212960955877:ios:c5e89e3b5f4341e939f30c',
+    appId: '1:212960955877:ios:33284b45275c5b5339f30c',
     messagingSenderId: '212960955877',
     projectId: 'gusta-groove',
     storageBucket: 'gusta-groove.appspot.com',
-    iosBundleId: 'com.example.cubitLearningTest',
+    iosBundleId: 'com.orkhan.restaurant',
   );
 }

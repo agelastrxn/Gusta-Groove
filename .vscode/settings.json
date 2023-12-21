@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    "restaurant.iml": true,
+    ".gitignore": true,
+    ".flutter-plugins-dependencies": true,
+    ".metadata": true,
+    ".flutter-plugins": true,
+    ".idea": true,
+    ".dart_tool": true,
+    ".vscode": true
+  }
+}
