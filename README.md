@@ -25,7 +25,7 @@ Before you embark on your Gusta Groove journey, make sure you have:
 - Flutter installed
 
 ## Installation
-  1. Clone the repository
+  1. Clone the repository:
      ```
      https://github.com/agelastrxn/Gusta-Groove.git
      ```
