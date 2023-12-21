@@ -14,8 +14,8 @@ class RegisterLoading extends RegisterState {}
 class RegisterSuccess extends RegisterState {}
 
 class RegisterError extends RegisterState {
-  final Exception message;
+  final Exception exception;
 
-  const RegisterError({required this.message});
+  const RegisterError({required this.exception});
 
 }

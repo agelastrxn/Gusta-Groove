@@ -1,4 +1,3 @@
-
 import 'package:restaurant/shared/additions/export.dart';
 
 class TabViewSkeleton extends StatelessWidget {
@@ -7,34 +6,22 @@ class TabViewSkeleton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              height: 15,
-              width: 150,
-              decoration: BoxDecoration(
-                borderRadius: AppRadiuses.defaultRadius,
-                color: Colors.grey,
-              ),
-            ),
-            Container(
-              height: 15,
-              width: 70,
-              decoration: BoxDecoration(
-                borderRadius: AppRadiuses.defaultRadius,
-                color: Colors.grey,
-              ),
-            ),
-          ],
+        Container(
+          height: 15,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: AppRadiuses.defaultRadius,
+            color: Colors.grey,
+          ),
         ),
         const SizedBox(height: 10),
         Container(
           height: 200,
           decoration: BoxDecoration(
             color: AppColors.indicator,
-            borderRadius: AppRadiuses.defaultRadius,
+            borderRadius: AppRadiuses.card,
           ),
         ),
         const SizedBox(height: 10),

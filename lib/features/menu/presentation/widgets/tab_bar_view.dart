@@ -25,35 +25,45 @@ class MenuTabBarView extends StatelessWidget {
                 ),
               );
             case MenuTabSuccess:
-              return ShowUpAnimation(
-                delay: 200,
-                child: TabBarView(
-                  children: List.generate(
-                    (state as MenuTabSuccess).menuTabItems.length,
-                    (i) {
-                      final tabItems = state.menuTabItems[i][state.menuTabItems[i].keys.first]!;
-                      return SingleChildScrollView(
-                        physics: const BouncingScrollPhysics(),
-                        child: Column(
+              return Padding(
+                padding: AppPaddings.defaultPadding,
+                child: (state as MenuTabSuccess).menuTabItems.isEmpty
+                    ? const Center(child: Text("No data"))
+                    : ShowUpAnimation(
+                        delay: 200,
+                        child: TabBarView(
                           children: List.generate(
-                            state.menuTabItems[i][state.menuTabItems[i].keys.first]!.length,
-                            (i2) {
-                              return MenuItemCard(
-                                model: tabItems[i2],
-                                name: tabItems[i2].name,
-                                price: tabItems[i2].price,
-                                image: tabItems[i2].photoUrl,
+                            state.menuTabItems.length,
+                            (i) {
+                              final tabItems = state.menuTabItems[i]
+                                  [state.menuTabItems[i].keys.first]!;
+                              return SingleChildScrollView(
+                                physics: const BouncingScrollPhysics(),
+                                child: Column(
+                                  children: List.generate(
+                                    state
+                                        .menuTabItems[i]
+                                            [state.menuTabItems[i].keys.first]!
+                                        .length,
+                                    (i2) {
+                                      return MenuItemCard(
+                                        model: tabItems[i2],
+                                        name: tabItems[i2].name,
+                                        price: tabItems[i2].price,
+                                        image: tabItems[i2].photoUrl,
+                                      );
+                                    },
+                                  ),
+                                ),
                               );
                             },
                           ),
                         ),
-                      );
-                    },
-                  ),
-                ),
+                      ),
               );
             case MenuTabError:
-              return Center(child: Text((state as MenuTabError).message.toString()));
+              return Center(
+                  child: Text((state as MenuTabError).message.toString()));
           }
           return const SizedBox();
         },

@@ -15,36 +15,48 @@ class MenuItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.defaultPadding,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Flexible(child: Text(name, overflow: TextOverflow.ellipsis)),
-              Text("$price AZN")
-            ],
-          ),
-          const SizedBox(height: 10),
-          GestureDetector(
-            onTap: () => GO.to(RouteKeys.detailPage, arguments: model),
-            child: Hero(
-              tag: name,
-              child: Container(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(name, overflow: TextOverflow.ellipsis),
+        const SizedBox(height: 10),
+        GestureDetector(
+          onTap: () => GO.to(RouteKeys.detailPage, arguments: model),
+          child: Hero(
+            tag: name,
+            child: Stack(children: [
+              Container(
                 height: 200,
                 decoration: BoxDecoration(
-                  image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
+                  image: DecorationImage(
+                      image: NetworkImage(image), fit: BoxFit.cover),
                   color: AppColors.indicator,
                   borderRadius: AppRadiuses.defaultRadius,
                 ),
               ),
-            ),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                left: 0,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: AppColors.indicator,
+                    borderRadius: AppRadiuses.card,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [const Text(Strngs.price), Text("$price AZN")],
+                  ),
+                ),
+              ),
+            ]),
           ),
-          const SizedBox(height: 10),
-          const Divider()
-        ],
-      ),
+        ),
+        const SizedBox(height: 10),
+        const Divider()
+      ],
     );
   }
 }

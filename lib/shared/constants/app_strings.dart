@@ -75,4 +75,7 @@ class Strngs {
   static const description = 'Desciption';
   static const ingredients = 'Ingredients';
   static const price = 'Price';
+
+  // Campaign Strings
+  static const noCampaigns = 'No campaigns';
 }

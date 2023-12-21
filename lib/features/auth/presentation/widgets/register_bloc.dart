@@ -23,11 +23,12 @@ class RegisterBloc extends StatelessWidget {
             CustomSnackbar.show(
               context: context,
               isError: true,
-              message: error.message.toString(),
+              message: error.exception.toString(),
             );
           case RegisterSuccess:
             GO.toAndReplace(RouteKeys.homePage);
-            CustomSnackbar.show(context: context, message: Strngs.registerSuccess);
+            CustomSnackbar.show(
+                context: context, message: Strngs.registerSuccess);
         }
       },
       builder: (context, state) {
@@ -39,11 +40,7 @@ class RegisterBloc extends StatelessWidget {
           child: const Text(Strngs.register),
           onPressed: () {
             if (provider.validateForm()) {
-              cubit.register(
-                email: provider.email.value!,
-                password: provider.psw.value!,
-                user: provider.user,
-              );
+              cubit.register(user: provider.user);
             }
           },
         );

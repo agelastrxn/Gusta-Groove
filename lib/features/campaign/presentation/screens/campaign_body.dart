@@ -14,12 +14,12 @@ class CampaignBody extends StatelessWidget {
             return Padding(
               padding: AppPaddings.defaultPadding,
               child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (ctx, idx) => Shimmer.fromColors(
-                      baseColor: AppColors.baseShimmer,
-                      highlightColor: AppColors.highlightShimmer,
-                      child: const TabViewSkeleton()),
-                ),
+                itemCount: 10,
+                itemBuilder: (ctx, idx) => Shimmer.fromColors(
+                    baseColor: AppColors.baseShimmer,
+                    highlightColor: AppColors.highlightShimmer,
+                    child: const TabViewSkeleton()),
+              ),
             );
           case CampaignError:
             return Padding(
@@ -27,25 +27,28 @@ class CampaignBody extends StatelessWidget {
               child: Center(child: Text((state as CampaignError).message)),
             );
           case CampaignSuccess:
-            return SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Padding(
-                padding: AppPaddings.defaultPadding,
-                child: Column(
-                  children: List.generate(
-                    (state as CampaignSuccess).campaigns.length,
-                    (index) => ShowUpAnimation(
-                      delay: (index + 1) * 100,
-                      child: CampaignCard(
-                        text: state.campaigns[index].name,
-                        image: state.campaigns[index].photoUrl,
-                        newPrice: state.campaigns[index].newPrice,
-                        oldPrice: state.campaigns[index].oldPrice,
+            return Container(
+              height: double.infinity,
+              padding: AppPaddings.defaultPadding,
+              child: ((state as CampaignSuccess).campaigns.isEmpty)
+                  ? const Center(child: Text(Strngs.noCampaigns))
+                  : SingleChildScrollView(
+                      physics: const BouncingScrollPhysics(),
+                      child: Column(
+                        children: List.generate(
+                          (state).campaigns.length,
+                          (index) => ShowUpAnimation(
+                            delay: (index + 1) * 100,
+                            child: CampaignCard(
+                              text: state.campaigns[index].name,
+                              image: state.campaigns[index].photoUrl,
+                              newPrice: state.campaigns[index].newPrice,
+                              oldPrice: state.campaigns[index].oldPrice,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-              ),
             );
         }
         return const Center(child: Text(Strngs.error));

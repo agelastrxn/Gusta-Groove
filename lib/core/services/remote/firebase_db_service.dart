@@ -46,17 +46,23 @@ class FirebaseDBService {
     }
   }
 
-  Future<Either<Exception, List<Map<String, List<MenuItemModel>>>>> getMenu() async {
+  Future<Either<Exception, List<Map<String, List<MenuItemModel>>>>>
+      getMenu() async {
     var menuSnapshot = await _firestore.collection('menu').get();
     List<Map<String, List<MenuItemModel>>> menuTabItems = [];
     try {
-      var tabNames = menuSnapshot.docs.map((doc) => doc['name'].toString()).toList();
+      var tabNames =
+          menuSnapshot.docs.map((doc) => doc['name'].toString()).toList();
 
       for (var tabName in tabNames) {
         List<MenuItemModel> tabItemsList = [];
-        var tabId = menuSnapshot.docs.firstWhere((doc) => doc['name'] == tabName).id;
-        var tabItemsSnapshot =
-            await _firestore.collection('menu').doc(tabId).collection(tabName).get();
+        var tabId =
+            menuSnapshot.docs.firstWhere((doc) => doc['name'] == tabName).id;
+        var tabItemsSnapshot = await _firestore
+            .collection('menu')
+            .doc(tabId)
+            .collection(tabName)
+            .get();
 
         for (var itemDoc in tabItemsSnapshot.docs) {
           var menuItemModel = MenuItemModel.fromJson(itemDoc.data());
@@ -73,21 +79,24 @@ class FirebaseDBService {
   Future<Either<Exception, List<CampaignEntity>>> getCampaigns() async {
     try {
       var campaignsSnapshot = await _firestore.collection('campaign').get();
-      var campaigns =
-          campaignsSnapshot.docs.map((doc) => CampaignModel.fromJson(doc.data())).toList();
+      var campaigns = campaignsSnapshot.docs
+          .map((doc) => CampaignModel.fromJson(doc.data()))
+          .toList();
       return Right(campaigns);
     } catch (e) {
       return Left(Exception(e));
     }
   }
 
-  Future<Either<Exception, UserModel>> updateUser(String email, String url) async {
+  Future<Either<Exception, UserModel>> updateUser(
+      String email, String url) async {
     try {
       await _firestore
           .collection("users")
           .where("email", isEqualTo: email)
           .get()
-          .then((value) => value.docs.first.reference.update({"photoUrl": url}));
+          .then(
+              (value) => value.docs.first.reference.update({"photoUrl": url}));
 
       var userSnapshot = await _firestore
           .collection("users")

@@ -16,24 +16,46 @@ class CampaignCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(children: [
-          Flexible(child: Text(text, overflow: TextOverflow.ellipsis)),
-          const Spacer(),
-          Text("$oldPrice AZN", style: const TextStyle(decoration: TextDecoration.lineThrough)),
-          const SizedBox(width: 10),
-          const Text("/"),
-          const SizedBox(width: 10),
-          Text("$newPrice AZN"),
-        ]),
+        Text(text, overflow: TextOverflow.ellipsis),
         const SizedBox(height: 10),
-        Container(
-          height: 200,
-          decoration: BoxDecoration(
-            image: DecorationImage(image: NetworkImage(image), fit: BoxFit.cover),
-            color: AppColors.indicator,
-            borderRadius: AppRadiuses.defaultRadius,
-          ),
+        Stack(
+          children: [
+            Container(
+              height: 200,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: NetworkImage(image), fit: BoxFit.cover),
+                color: AppColors.indicator,
+                borderRadius: AppRadiuses.card,
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              right: 0,
+              left: 0,
+              child: Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                decoration: BoxDecoration(
+                  color: AppColors.indicator,
+                  borderRadius: AppRadiuses.card,
+                ),
+                child: Row(children: [
+                  const Spacer(),
+                  Text("$oldPrice AZN",
+                      style: const TextStyle(
+                          decoration: TextDecoration.lineThrough)),
+                  const SizedBox(width: 10),
+                  const Text("/"),
+                  const SizedBox(width: 10),
+                  Text("$newPrice AZN"),
+                  const SizedBox(width: 10),
+                ]),
+              ),
+            )
+          ],
         ),
         const SizedBox(height: 10),
         const Divider()
