@@ -25,19 +25,19 @@ class MenuTabBarView extends StatelessWidget {
                 ),
               );
             case MenuTabSuccess:
-              return Padding(
-                padding: AppPaddings.defaultPadding,
-                child: (state as MenuTabSuccess).menuTabItems.isEmpty
-                    ? const Center(child: Text("No data"))
-                    : ShowUpAnimation(
-                        delay: 200,
-                        child: TabBarView(
-                          children: List.generate(
-                            state.menuTabItems.length,
-                            (i) {
-                              final tabItems = state.menuTabItems[i]
-                                  [state.menuTabItems[i].keys.first]!;
-                              return SingleChildScrollView(
+              return (state as MenuTabSuccess).menuTabItems.isEmpty
+                  ? const Center(child: Text("No data"))
+                  : ShowUpAnimation(
+                      delay: 200,
+                      child: TabBarView(
+                        children: List.generate(
+                          state.menuTabItems.length,
+                          (i) {
+                            final tabItems = state.menuTabItems[i]
+                                [state.menuTabItems[i].keys.first]!;
+                            return Padding(
+                              padding: AppPaddings.defaultPadding,
+                              child: SingleChildScrollView(
                                 physics: const BouncingScrollPhysics(),
                                 child: Column(
                                   children: List.generate(
@@ -55,12 +55,12 @@ class MenuTabBarView extends StatelessWidget {
                                     },
                                   ),
                                 ),
-                              );
-                            },
-                          ),
+                              ),
+                            );
+                          },
                         ),
                       ),
-              );
+                    );
             case MenuTabError:
               return Center(
                   child: Text((state as MenuTabError).message.toString()));
