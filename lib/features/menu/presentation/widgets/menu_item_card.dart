@@ -39,8 +39,7 @@ class MenuItemCard extends StatelessWidget {
                 right: 0,
                 left: 0,
                 child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                  padding: AppPaddings.priceCard,
                   decoration: BoxDecoration(
                     color: AppColors.indicator,
                     borderRadius: AppRadiuses.card,

@@ -8,5 +8,7 @@ class AppPaddings {
       const EdgeInsets.only(left: 76, right: 16, top: 8, bottom: 8);
   static EdgeInsets get tabPadding => const EdgeInsets.symmetric(horizontal: 10);
   static EdgeInsets get authPadding => const EdgeInsets.symmetric(horizontal: 16);
+  static EdgeInsets get priceCard =>
+      const EdgeInsets.symmetric(horizontal: 10, vertical: 5);
 
 }
