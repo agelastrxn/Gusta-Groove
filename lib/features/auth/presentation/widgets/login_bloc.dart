@@ -19,11 +19,10 @@ class Login extends StatelessWidget {
       listener: (context, state) {
         switch (state.runtimeType) {
           case LoginError:
-            final error = state as LoginError;
             CustomSnackbar.show(
               context: context,
               isError: true,
-              message: error.message.toString(),
+              message: Strngs.loginError,
             );
           case LoginSuccess:
             GO.toAndReplace(RouteKeys.homePage);

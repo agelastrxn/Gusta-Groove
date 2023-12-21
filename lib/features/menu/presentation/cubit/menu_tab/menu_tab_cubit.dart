@@ -3,6 +3,7 @@ import 'package:restaurant/shared/additions/export.dart';
 part 'menu_tab_state.dart';
 
 class MenuTabCubit extends Cubit<MenuTabState> {
+ 
   MenuTabCubit() : super(MenuTabInitial());
   int menuTabs = 0;
   final GetMenuUseCase _usecase = injection.get();

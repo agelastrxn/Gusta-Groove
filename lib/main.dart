@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
       home: Storage.user == null
           ? const LoginScreen()
           : MultiBlocProvider(
-              providers: [ChangeNotifierProvider<NavBarProvider>(create: (_) => NavBarProvider())],
+              providers: [
+                ChangeNotifierProvider<NavBarProvider>(
+                    create: (_) => NavBarProvider())
+              ],
               child: const HomeScreen(),
             ),
     );

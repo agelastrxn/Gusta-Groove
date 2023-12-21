@@ -22,16 +22,18 @@ class MenuItemCard extends StatelessWidget {
         const SizedBox(height: 10),
         GestureDetector(
           onTap: () => GO.to(RouteKeys.detailPage, arguments: model),
-          child: Hero(
-            tag: name,
-            child: Stack(children: [
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: NetworkImage(image), fit: BoxFit.cover),
-                  color: AppColors.indicator,
-                  borderRadius: AppRadiuses.defaultRadius,
+          child: Stack(
+            children: [
+              Hero(
+                tag: name,
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(image), fit: BoxFit.cover),
+                    color: AppColors.indicator,
+                    borderRadius: AppRadiuses.defaultRadius,
+                  ),
                 ),
               ),
               Positioned(
@@ -46,11 +48,14 @@ class MenuItemCard extends StatelessWidget {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [const Text(Strngs.price), Text("$price AZN")],
+                    children: [
+                      const Text(Strngs.price),
+                      Text("$price AZN"),
+                    ],
                   ),
                 ),
               ),
-            ]),
+            ],
           ),
         ),
         const SizedBox(height: 10),

@@ -19,12 +19,8 @@ class RegisterBloc extends StatelessWidget {
       listener: (context, state) {
         switch (state.runtimeType) {
           case RegisterError:
-            final error = state as RegisterError;
             CustomSnackbar.show(
-              context: context,
-              isError: true,
-              message: error.exception.toString(),
-            );
+                context: context, isError: true, message: Strngs.registerError);
           case RegisterSuccess:
             GO.toAndReplace(RouteKeys.homePage);
             CustomSnackbar.show(

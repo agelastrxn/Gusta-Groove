@@ -9,6 +9,8 @@ class Strngs {
   static const emailError = 'Invalid email';
   static const pswError = 'Invalid password';
   static const confirmPswError = 'Passwords do not match';
+  static const loginError = 'Email or password is incorrect';
+  static const registerError = 'Email already in use';
 
 // Auth Strings
   static const name = 'Name';
@@ -60,7 +62,7 @@ class Strngs {
       'https://www.linkedin.com/in/orkhan-mirzazada-378b60205/';
 
   // Image Path Strings
-  static const appLogoPath = 'assets/kolorit_splash_screen.png';
+  static const appLogoPath = 'assets/logo.png';
 
   // Snackbar Strings
   static const error = 'Error';
